@@ -17,8 +17,10 @@
 # Make sure the default target is to simply build and run the benchmark.
 RSTAMP = v1.0
 
+PORT_DIR = zjv
+
 .PHONY: run score
-run: $(OUTFILE) rerun score
+run: link # $(OUTFILE) rerun score
 
 score:
 	@echo "Check run1.log and run2.log for results."
@@ -123,7 +125,7 @@ load: $(OUTFILE)
 
 .PHONY: clean
 clean:
-	rm -f $(OUTFILE) $(OPATH)*.log *.info $(OPATH)index.html $(PORT_CLEAN)
+	rm -f $(OUTFILE) $(OPATH)*.log *.info *.o $(OPATH)index.html $(PORT_CLEAN)
 
 .PHONY: force_rebuild
 force_rebuild:
