@@ -47,3 +47,6 @@ _start:
 	li a1, 0
 
 	call main
+
+	li t0, 0xc001babe
+	sd t0, 0x100(zero)
