@@ -33,9 +33,8 @@ LD = $(RISCV_TRIPLE)-ld
 # Flag : CFLAGS
 #	Use this flag to define compiler options. Note, you can add compiler options from the command line using XCFLAGS="other flags"
 PORT_CFLAGS = -O2 -march=$(ISA) -mabi=$(ABI) \
-		  	  -std=gnu99 -mcmodel=medany -ffunction-sections -fdata-sections \
-			  -nostartfiles -nostdlib -nostdinc -fno-builtin -static -lc -lgcc \
-			  -Wl,--nmagic -Wl,--gc-sections -g -funroll-loops -fpeel-loops -fgcse-sm -fgcse-las \
+		  	  -mcmodel=medany -ffunction-sections -fdata-sections \
+			  -nostartfiles -nostdlib -fno-builtin -static -lgcc  \
 			  -T $(PORT_DIR)/link.ld
 			  
 FLAGS_STR = "$(PORT_CFLAGS) $(XCFLAGS) $(XLFLAGS) $(LFLAGS_END)"
